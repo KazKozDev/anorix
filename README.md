@@ -73,13 +73,6 @@ Orchestrator (LangChain)
 - proactive_care: Reminders, check-ins, wellness tips, celebrations.
 
 
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes
-4. Open a Pull Request
-
 ### License
 
 MIT License - see [LICENSE](LICENSE)
