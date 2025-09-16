@@ -1,10 +1,10 @@
-# Anorix – Local AI Friend & Assistant
+## Anorix – Local AI Friend & Assistant
 
 Local AI system built with LangChain and Ollama that combines:
 - **Conversational friend** with memory and evolving personality
 - **Assistant** with LangChain tool architecture (search, code, math, files, APIs)
 
-## ✨ Features
+### Features
 
 - **Voice chat** with WebRTC audio (Whisper STT, Bark TTS)
 - **Dictation support** - local transcription into input field
@@ -16,7 +16,7 @@ Local AI system built with LangChain and Ollama that combines:
 - **LangChain-based** orchestration and tools
 - **Fully local deployment**, no external dependencies
 
-## 🚀 Quick Start
+### Quick Start
 
 ### Install dependencies
 ```bash
@@ -41,7 +41,7 @@ pip install -r requirements.txt
 ollama pull gpt-oss:20b  # or another compatible model
 ```
 
-## 🏗️ Architecture
+### Architecture
 
 ```
 User
@@ -57,7 +57,7 @@ Orchestrator (LangChain)
 └── LLM Core (Ollama)
 ```
 
-## 🛠️ Available Tools
+### Available Tools
 
 - **Web search** - DuckDuckGo and site-specific
 - **Math** - symbolic and numeric calculations
@@ -73,14 +73,14 @@ personality_system: Traits and communication style management.
 proactive_care: Reminders, check-ins, wellness tips, celebrations.
 
 
-## 🤝 Contributing
+### Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make changes
 4. Open a Pull Request
 
-## 📄 License
+### License
 
 MIT License - see [LICENSE](LICENSE)
 
