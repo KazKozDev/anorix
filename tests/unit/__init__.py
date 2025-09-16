@@ -1,0 +1,1 @@
+"""Unit tests for Local Friend components"""

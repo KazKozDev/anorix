@@ -1,0 +1,1 @@
+"""Manual tests and demos for Local Friend"""

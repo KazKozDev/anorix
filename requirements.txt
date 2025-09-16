@@ -1,0 +1,96 @@
+# ====================================
+# CORE DEPENDENCIES (always required)
+# ====================================
+
+# Core LangChain dependencies
+langchain==0.3.0
+langchain-community==0.3.0
+langchain-huggingface==0.0.3
+langchain-ollama==0.2.0
+PyYAML==6.0.1
+python-dotenv==1.0.1
+pydantic>=2.0,<3.0
+
+# Web scraping and browser automation
+selenium
+webdriver-manager
+beautifulsoup4
+lxml
+
+# HTTP requests for search tool
+requests==2.31.0
+
+# Date/time handling 
+pytz==2023.3
+
+# System monitoring for system info tool
+psutil==5.9.6
+
+# Additional utilities
+pathlib2==2.3.7; python_version < "3.4"
+
+# ====================================
+# RAG AND VECTOR DATABASE
+# ====================================
+
+chromadb==0.4.15
+langchain-chroma==0.1.4
+sentence-transformers>=2.6.0
+faiss-cpu==1.8.0.post1
+tiktoken==0.5.1
+pypdf>=3.17.0,<4.0
+python-docx==1.1.0
+markdown==3.5.1
+transformers>=4.43
+torch>=2.3
+
+# Excel support
+openpyxl==3.1.2
+xlrd==2.0.1
+
+# Image processing
+Pillow==10.0.1
+
+# ====================================
+# WEB UI DEPENDENCIES  
+# ====================================
+
+# Flask web framework
+flask>=2.3.0
+flask-cors>=4.0.0
+flask-socketio>=5.3.0
+
+# ====================================
+# DESKTOP UI DEPENDENCIES
+# ====================================
+
+# GUI framework for desktop app
+tkinter; sys_platform != "darwin"  # Built-in on most systems, explicit for some Linux
+
+# ====================================
+# VOICE FEATURES (OPTIONAL)
+# Install for voice features
+# ====================================
+
+# WebRTC and Audio Processing
+aiortc==1.6.0
+av==10.0.0
+python-socketio==5.10.0
+sounddevice>=0.4.6
+numpy>=1.23
+
+# Whisper for Speech-to-Text
+faster-whisper==0.9.0
+torchaudio>=2.0.0
+
+# Bark for Text-to-Speech  
+bark>=0.1.5
+scipy>=1.9.0
+
+# Audio utilities
+soundfile>=0.12.1
+librosa>=0.10.1
+webrtcvad>=2.0.10
+
+# Async support
+aiofiles>=23.0.0

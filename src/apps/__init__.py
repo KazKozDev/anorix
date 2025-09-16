@@ -1,0 +1,1 @@
+"""Local Friend - Applications Package"""

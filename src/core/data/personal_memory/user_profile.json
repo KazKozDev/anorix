@@ -1,0 +1,148 @@
+{
+  "user_info": {
+    "name": null,
+    "age": null,
+    "occupation": null,
+    "location": null,
+    "timezone": null
+  },
+  "preferences": {
+    "interests": [],
+    "hobbies": [],
+    "favorite_topics": [],
+    "communication_style": "friendly",
+    "preferred_language": "mixed"
+  },
+  "facts": [
+    {
+      "id": 1,
+      "content": "Name: Artem",
+      "category": "basic_info",
+      "importance": 8,
+      "tags": [],
+      "timestamp": "2025-09-13T08:08:32.937303",
+      "recalled_count": 0
+    },
+    {
+      "id": 2,
+      "content": "name: Artem",
+      "category": "basic_info",
+      "importance": 8,
+      "tags": [],
+      "timestamp": "2025-09-13T08:08:44.190321",
+      "recalled_count": 0
+    },
+    {
+      "id": 3,
+      "content": "Artem, 41 years old",
+      "category": "basic_info",
+      "importance": 5,
+      "tags": [],
+      "timestamp": "2025-09-13T08:09:13.914112",
+      "recalled_count": 0
+    },
+    {
+      "id": 4,
+      "content": "User age 41 years",
+      "category": "basic_info",
+      "importance": 8,
+      "tags": [
+        "age"
+      ],
+      "timestamp": "2025-09-13T08:13:28.895010",
+      "recalled_count": 0
+    },
+    {
+      "id": 5,
+      "content": "Test information for verification",
+      "category": "test",
+      "importance": 5,
+      "tags": [],
+      "timestamp": "2025-09-13T08:15:25.350787",
+      "recalled_count": 0
+    },
+    {
+      "id": 6,
+      "content": "boyfriend name is Fred",
+      "category": "relationship",
+      "importance": 8,
+      "tags": [],
+      "timestamp": "2025-09-13T08:29:04.796848",
+      "recalled_count": 0
+    },
+    {
+      "id": 7,
+      "content": "play tennis",
+      "category": "preference",
+      "importance": 5,
+      "tags": [],
+      "timestamp": "2025-09-13T08:38:46.676166",
+      "recalled_count": 0
+    },
+    {
+      "id": 8,
+      "content": "studies LLM agents",
+      "category": "basic_info",
+      "importance": 8,
+      "tags": [],
+      "timestamp": "2025-09-13T08:40:10.772719",
+      "recalled_count": 0
+    },
+    {
+      "id": 9,
+      "content": "Surname: Kazakov Kozlov",
+      "category": "basic_info",
+      "importance": 8,
+      "tags": [],
+      "timestamp": "2025-09-13T08:40:30.841727",
+      "recalled_count": 0
+    },
+    {
+      "id": 10,
+      "content": "Born in Penza",
+      "category": "basic_info",
+      "importance": 5,
+      "tags": [
+        "birthplace"
+      ],
+      "timestamp": "2025-09-13T08:56:23.680402",
+      "recalled_count": 0
+    },
+    {
+      "id": 11,
+      "content": "Place of residence: Moscow",
+      "category": "basic_info",
+      "importance": 8,
+      "tags": [],
+      "timestamp": "2025-09-13T09:03:17.390646",
+      "recalled_count": 0
+    },
+    {
+      "id": 12,
+      "content": "current city of residence: Barcelona",
+      "category": "basic_info",
+      "importance": 8,
+      "tags": [],
+      "timestamp": "2025-09-13T09:03:29.265601",
+      "recalled_count": 0
+    }
+  ],
+  "relationships": {
+    "family": [],
+    "friends": [],
+    "colleagues": [],
+    "pets": []
+  },
+  "important_dates": [],
+  "goals": [],
+  "mood_history": [],
+  "interaction_stats": {
+    "total_conversations": 54,
+    "first_interaction": "2025-09-13T08:10:05.786408",
+    "last_interaction": "2025-09-13T09:04:06.649132",
+    "favorite_topics_mentioned": {},
+    "emotional_patterns": {}
+  },
+  "created": "2025-09-13T08:07:09.639091",
+  "last_updated": "2025-09-13T09:04:06.649151"
+}

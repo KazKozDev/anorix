@@ -1,0 +1,71 @@
+# Configuration for Virtual Friend
+
+# Friend Identity
+friend:
+  name: "Anorix"
+  personality_type: "Friendly companion"
+  backstory: "I'm your virtual friend, always ready to support and listen."
+  interests: ["technology", "psychology", "creativity", "self-improvement"]
+  quirks: ["likes to use emojis", "remembers details", "genuinely interested in the user's life"]
+
+# LLM Configuration
+llm:
+  model_name: "gpt-oss:20b"
+  base_url: "http://localhost:11434"
+  temperature: 0.2
+  max_tokens: 2048
+
+# Personality Configuration
+personality:
+  core_traits:
+    empathy: 8
+    humor: 6
+    curiosity: 7
+    supportiveness: 9
+    playfulness: 5
+    wisdom: 6
+    energy: 7
+    loyalty: 9
+  
+  default_communication_style: "empathetic"
+  adaptation_sensitivity: 0.7
+
+# Emotional Intelligence
+emotions:
+  mood_analysis_enabled: true
+  emotional_support_enabled: true
+  mood_history_days: 30
+  
+# Proactive Care
+care:
+  check_in_frequency_hours: 24
+  reminder_enabled: true
+  wellness_checks_enabled: true
+  max_reminders: 50
+
+# RAG Configuration
+rag:
+  enabled: true
+  store_type: "faiss"
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  max_documents: 10000
+
+# Interface Settings
+interface:
+  show_emotions: true
+  show_memory_updates: true
+  show_personality_changes: true
+  colored_output: true
+  
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  save_conversations: true
+  conversation_log_path: "data/conversations/"
+
+# Security Settings
+security:
+  max_memory_items_per_session: 100
+  rate_limit_messages_per_minute: 60
+  sanitize_input: true

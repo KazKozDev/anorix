@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Friend - Virtual Friend</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="friend-avatar">
+                <div class="avatar-circle">
+                    <i class="fas fa-robot"></i>
+                    <div class="status-indicator online" id="friendStatus"></div>
+                </div>
+            </div>
+            <div class="friend-info">
+                <h1 class="friend-name">Anorix</h1>
+                <p class="friend-status" id="friendStatusText">Ready to chat</p>
+            </div>
+            
+            <!-- Voice Mode Toggle -->
+            <div class="voice-toggle-container">
+                <label class="voice-toggle">
+                    <input type="checkbox" id="voiceMode">
+                    <span class="toggle-slider">
+                        <i class="fas fa-microphone"></i>
+                        <i class="fas fa-keyboard"></i>
+                    </span>
+                </label>
+                <span class="toggle-label">Voice mode</span>
+                
+                <!-- Wake Word Toggle - TEMPORARILY DISABLED -->
+                <!-- 
+                <label class="wake-word-toggle" title="Activation by 'Start'">
+                    <input type="checkbox" id="wakeWordMode">
+                    <span class="wake-word-slider">
+                        <i class="fas fa-ear-listen"></i>
+                    </span>
+                </label>
+                -->
+            </div>
+            
+            <!-- Settings Button -->
+            <button class="settings-btn" id="settingsBtn">
+                <i class="fas fa-cog"></i>
+            </button>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="message friend-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            Hi! I'm Anorix, your virtual friend! 😊<br>
+                            I remember our conversations and evolve with each interaction.<br>
+                            <strong>Turn on voice mode</strong> to talk to me!
+                        </div>
+                        <div class="message-time">just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Visualizer -->
+            <div class="voice-visualizer" id="voiceVisualizer" style="display: none;">
+                <div class="wave-container">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+                <p class="voice-status" id="voiceStatus">Press and speak...</p>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="message friend-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="typing-animation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <!-- Text Input Mode -->
+            <div class="text-input-area" id="textInputArea">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput"
+                        placeholder="Type a message..."
+                        rows="1"
+                    ></textarea>
+                    <div class="input-buttons">
+                        <button class="file-btn" id="fileBtn" title="Upload file">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="send-btn" id="sendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hidden input for file uploads -->
+                <input type="file" id="fileInput" style="display: none;" 
+                       accept=".txt,.md,.pdf,.docx,.xlsx,.xls,.jpg,.jpeg,.png,.gif,.bmp,.webp,.tiff,.py,.js,.css,.html,.json,.xml,.csv" />
+            </div>
+
+            <!-- Voice Input Mode -->
+            <div class="voice-input-area" id="voiceInputArea" style="display: none;">
+                <button class="voice-btn" id="voiceBtn">
+                    <div class="voice-btn-inner">
+                        <i class="fas fa-microphone"></i>
+                        <span class="voice-btn-text">Press and speak</span>
+                    </div>
+                    <div class="voice-btn-pulse"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Side Panel (Memory, Mood, etc.) -->
+        <aside class="side-panel" id="sidePanel">
+            <div class="panel-header">
+                <h3>Information</h3>
+                <button class="panel-close" id="panelClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="panel-content">
+                <!-- Friend Status -->
+                <div class="info-section">
+                    <h4><i class="fas fa-heart"></i> Friend status</h4>
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <span class="status-label">Mood</span>
+                            <span class="status-value" id="friendMood">Friendly</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Conversations</span>
+                            <span class="status-value" id="conversationCount">0</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Memory facts</span>
+                            <span class="status-value" id="memoryCount">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory Section -->
+                <div class="info-section">
+                    <h4><i class="fas fa-brain"></i> Memory about me</h4>
+                    <div class="memory-list" id="memoryList">
+                        <p class="no-memory">No saved information yet</p>
+                    </div>
+                </div>
+
+                <!-- Mood History -->
+                <div class="info-section">
+                    <h4><i class="fas fa-chart-line"></i> Mood history</h4>
+                    <div class="mood-chart" id="moodChart">
+                        <p class="no-data">No mood data</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Settings Modal -->
+        <div class="modal" id="settingsModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Settings</h3>
+                    <button class="modal-close" id="modalClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label>Friend name</label>
+                        <input type="text" id="friendNameInput" value="Anorix">
+                    </div>
+                    <div class="setting-group">
+                        <label>Voice</label>
+                        <select id="voiceSelect">
+                            <option value="ru-RU">Russian</option>
+                            <option value="en-US">English</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Speech rate</label>
+                        <input type="range" id="speechRate" min="0.5" max="2" value="1" step="0.1">
+                    </div>
+                    <div class="setting-group">
+                        <label>Dark theme</label>
+                        <label class="toggle">
+                            <input type="checkbox" id="darkMode">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="saveSettings">Save</button>
+                    <button class="btn btn-secondary" id="resetMemory">Reset memory</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Button -->
+    <button class="info-btn" id="infoBtn">
+        <i class="fas fa-info"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <!-- Markdown & Sanitizer -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- TEMPORARILY DISABLED: <script src="https://unpkg.com/@picovoice/porcupine-web@3.0.1/dist/iife/index.js"></script> -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/voice.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/advanced-voice.js') }}"></script>
+    <!-- TEMPORARILY DISABLED: <script src="{{ url_for('static', filename='js/wake-word.js') }}"></script> -->
+</body>
+</html>
