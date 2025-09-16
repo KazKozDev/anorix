@@ -1,8 +1,9 @@
 
-## Anorix – Local AI Friend & Assistant
+
 
 <img width="2380" height="885" alt="37e918c0-a8f2-4465-bb00-61de1265bac7 copy" src="https://github.com/user-attachments/assets/0dc617bc-ffda-45bc-a4a3-7889b962dc88" />
 
+## Anorix – Local AI Friend & Assistant
 
 Local AI system built with LangChain and Ollama that combines:
 - **Conversational friend** with memory and evolving personality
