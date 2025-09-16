@@ -68,9 +68,9 @@ Orchestrator (LangChain)
 
 ### Virtual friend
 
-- emotional_intelligence: Mood analysis, support, history.
-- personality_system: Traits and communication style management.
-- proactive_care: Reminders, check-ins, wellness tips, celebrations.
+- emotional_intelligence: Mood analysis, support, history
+- personality_system: Traits and communication style management
+- proactive_care: Reminders, check-ins, wellness tips, celebrations
 
 
 ### License
