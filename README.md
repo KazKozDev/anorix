@@ -66,11 +66,11 @@ Orchestrator (LangChain)
 - **Time** - work with dates and time
 - **RAG** - local knowledge base search 
 
-Virtual friend
+### Virtual friend
 
-emotional_intelligence: Mood analysis, support, history.
-personality_system: Traits and communication style management.
-proactive_care: Reminders, check-ins, wellness tips, celebrations.
+- emotional_intelligence: Mood analysis, support, history.
+- personality_system: Traits and communication style management.
+- proactive_care: Reminders, check-ins, wellness tips, celebrations.
 
 
 ### Contributing
