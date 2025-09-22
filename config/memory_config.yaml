@@ -1,0 +1,143 @@
+# Memory System Configuration
+memory:
+  # Enable memory system
+  enabled: true
+
+  # Short-term memory (RAM) configuration
+  short_term:
+    # Maximum number of messages to keep in RAM
+    max_messages: 10
+
+    # Enable automatic context injection from previous sessions
+    auto_context: true
+
+    # Number of recent messages to load as context (from last 7 days)
+    context_load_limit: 5
+
+  # Long-term memory (SQL database) configuration
+  long_term:
+    # Database file path (relative to project root)
+    db_path: "data/conversations.db"
+
+    # Enable automatic conversation saving
+    auto_save: true
+
+    # Enable profile tracking
+    profile_tracking: true
+
+    # Enable fact storage
+    fact_storage: true
+
+    # Enable statistics collection
+    statistics: true
+
+  # Smart memory (Vector database) configuration
+  smart_memory:
+    # Enable semantic search capabilities
+    enabled: true
+
+    # Vector database path
+    db_path: "data/vector_db"
+
+    # Collection name for conversations
+    collection_name: "conversations"
+
+    # Embedding model for semantic search
+    embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+    # Enable automatic conversation indexing
+    auto_index: true
+
+    # Minimum text length to index
+    min_text_length: 10
+
+# Memory tools configuration
+memory_tools:
+  # Enable memory-related tools
+  enabled: true
+
+  # Available memory tools
+  tools:
+    - memory_search
+    - profile_tool
+    - facts_save
+    - conversation_history
+
+  # Tool-specific settings
+  memory_search:
+    default_method: "semantic"
+    default_limit: 5
+    max_limit: 20
+
+  profile_tool:
+    auto_update_activity: true
+    track_preferences: true
+
+  facts_save:
+    default_confidence: 1.0
+    auto_categorize: false
+
+  conversation_history:
+    default_limit: 20
+    max_limit: 100
+    include_metadata: true
+
+# Performance settings
+performance:
+  # Memory management
+  memory_cleanup:
+    # Enable periodic cleanup
+    enabled: true
+
+    # Cleanup interval in hours
+    interval_hours: 24
+
+    # Keep conversations for N days (0 = keep all)
+    keep_days: 30
+
+  # Caching
+  cache:
+    # Enable embedding cache
+    enabled: true
+
+    # Cache size limit in MB
+    max_size_mb: 100
+
+    # Cache TTL in seconds
+    ttl_seconds: 3600
+
+  # Batch processing
+  batch:
+    # Batch size for bulk operations
+    size: 50
+
+    # Enable async processing
+    async_processing: true
+
+# Logging configuration for memory components
+logging:
+  # Log level for memory system
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+
+  # Enable detailed memory logging
+  detailed: false
+
+  # Log memory operations
+  log_operations: true
+
+  # Log file path (optional)
+  log_file: null
+
+# Privacy and security
+privacy:
+  # Enable data encryption at rest
+  encrypt_data: false
+
+  # Anonymize stored conversations
+  anonymize: false
+
+  # Enable automatic PII detection
+  pii_detection: false
+
+  # Data retention policy (days, 0 = keep forever)
+  retention_days: 0
