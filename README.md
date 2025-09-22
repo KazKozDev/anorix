@@ -1,3 +1,7 @@
+
+<img width="1024" height="367" alt="Anor" src="https://github.com/user-attachments/assets/a799392a-b7f2-400c-830e-2b3e8e7550ae" />
+
+
 # Anorix AI Agent
 
 An interactive AI agent with memory system that uses Ollama LLM to process queries while preserving conversation context.
