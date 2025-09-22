@@ -9,6 +9,7 @@ from .datetime_tool import DateTimeTool
 from .calendar_tool import CalendarTool
 from .reminder_tool import ReminderTool
 from .task_manager_tool import TaskManagerTool
+from .goal_tracker_tool import GoalTrackerTool
 from .webscraper import (
     WebScraperTool,
     scrape_webpage,
@@ -25,6 +26,7 @@ __all__ = [
     "CalendarTool",
     "ReminderTool",
     "TaskManagerTool",
+    "GoalTrackerTool",
     "WebScraperTool",
     "scrape_webpage",
     "extract_article",

@@ -29,6 +29,8 @@ from .tools.conversation_history import ConversationHistoryTool
 from .tools.calendar_tool import CalendarTool
 from .tools.reminder_tool import ReminderTool
 from .tools.task_manager_tool import TaskManagerTool
+from .tools.goal_tracker_tool import GoalTrackerTool
+from .tools.habit_tracker_tool import HabitTrackerTool
 
 
 class ToolManager:
@@ -88,6 +90,8 @@ class ToolManager:
                 CalendarTool().get_tool(),
                 *ReminderTool().get_tools(),
                 *TaskManagerTool().get_tools(),
+                *GoalTrackerTool().get_tools(),
+                *HabitTrackerTool().get_tools(),
                 get_langchain_scraper_tool(),
                 get_http_download_tool(),
                 get_arxiv_tool(),
