@@ -47,7 +47,7 @@ python main.py --model gpt-oss:20b --verbose --new-session
   - Long-term: Conversation database
   - Smart: Vector search through documents
 - **ToolManager**: Tool and RAG management
-- **Tools**: search, profile, facts, RAG, files
+- **Tools**: search, profile, facts, RAG, files, calendar, reminders, tasks, goals, habits
 
 ### Memory System
 
@@ -64,11 +64,17 @@ Automatically saves:
 - `facts_save`: Save facts
 - `conversation_history`: Conversation history
 - `rag_management`: RAG operations
-- `file_manager`: File management
+- `file_manager`: File read/write and directory operations (structured)
 - `web_search`: Internet search
 - `arxiv`: Work with scientific articles
-- `calendar_tool`: Calendar and event management
 - `datetime_tool`: Date and time operations
+
+Calendar and productivity suite (structured tools with persistence):
+- `calendar_create`, `calendar_list`, `calendar_search`, `calendar_get`, `calendar_update`, `calendar_delete`
+- `reminder_create`, `reminder_list`, `reminder_get`, `reminder_update`, `reminder_delete`
+- `task_create`, `task_list`, `task_get`, `task_update`, `task_delete`, `task_complete`, `task_reopen`
+- `goal_create`, `goal_list`, `goal_get`, `goal_update`, `goal_delete`, `goal_progress`, `goal_complete`
+- `habit_create`, `habit_list`, `habit_get`, `habit_update`, `habit_delete`, `habit_log`, `habit_unlog`, `habit_streak`, `habit_stats`
 
 ## Configuration
 
@@ -95,19 +101,60 @@ agent = OllamaAgent(model_name="gpt-oss:20b")
 response = agent.run("Your query")
 ```
 
-### Calendar Tool Examples
+### Calendar Examples
+The agent can map natural-language requests to structured calendar tools.
+
 ```python
-# Create a calendar event
-agent.run("Create a team meeting on 2024-01-20 at 10:00 for 1 hour")
+# Create a calendar event (the LLM will compute end time for 1 hour)
+agent.run("Create a team meeting on 2025-09-23 at 10:00 for 1 hour in Zoom")
 
-# Search for events
-agent.run("Show me all appointments for tomorrow")
+# List today's/tomorrow's events
+agent.run("What do I have today?")
+agent.run("Show me appointments for tomorrow")
 
-# List events by category
-agent.run("Show me all work meetings this week")
+# Search and update
+agent.run("Search for 'meeting' in my calendar")
+agent.run("Move the dentist appointment to 14:30")
+```
 
-# Update an event
-agent.run("Change the dentist appointment to 2:00 PM")
+### Reminder Examples
+```python
+# Create a reminder
+agent.run("Remind me tomorrow at 09:00 to call John. Priority high")
+
+# List, update, delete
+agent.run("List my reminders for this week")
+agent.run("Mark reminder 2 as done")
+agent.run("Delete reminder 5")
+```
+
+### Task Manager Examples
+```python
+# Create and list tasks
+agent.run("Create a task 'Prepare Q3 report' due 2025-09-25 with tags finance, q3")
+agent.run("Show pending tasks with high priority")
+
+# Update, complete, reopen
+agent.run("Update task 3 — change due date to 2025-09-26")
+agent.run("Complete task 3")
+agent.run("Reopen task 3")
+```
+
+### Goal Tracker Examples
+```python
+# Create and track goals
+agent.run("Create a goal 'Learn Rust' with target 2025-12-31, priority high, progress 10%")
+agent.run("Set goal 2 progress to 55%")
+agent.run("Complete goal 2")
+```
+
+### Habit Tracker Examples
+```python
+# Create and log habits
+agent.run("Create a habit 'Drink water' with reminder 09:00 and target streak 21 days")
+agent.run("Log habit 2 today")
+agent.run("Show current streak for habit 2")
+agent.run("Show habit 2 stats for September 2025")
 ```
 
 ## Project Structure
@@ -121,7 +168,7 @@ anorix/
 │   ├── tools/            # Tools
 │   └── tool_manager.py   # Tool management
 ├── config/               # Configuration
-├── data/                 # Data and databases
+├── data/                 # Local data and databases (gitignored)
 ├── examples/             # Usage examples
 ├── main.py              # Interactive shell
 └── requirements.txt     # Dependencies
