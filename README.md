@@ -120,7 +120,7 @@ agent.run("Calculate compound interest on $1000 at 5% for 10 years")
 
 ```
 anorix/
-├── agent/                    # Core agent system
+├── agent/                   # Core agent system
 │   ├── core.py              # Main OllamaAgent class
 │   ├── tool_manager.py      # Tool registration and management
 │   ├── callbacks.py         # LLM callback handlers
@@ -136,12 +136,12 @@ anorix/
 ├── config/                  # Configuration files
 ├── data/                    # Data storage (gitignored)
 │   ├── conversations.db     # SQLite conversation history
-│   ├── vector_db/          # ChromaDB vector storage
-│   └── rag_documents/      # RAG document storage
+│   ├── vector_db/           # ChromaDB vector storage
+│   └── rag_documents/       # RAG document storage
 ├── examples/                # Usage examples
 ├── tests/                   # Test suite
-├── main.py                 # Interactive shell entry point
-└── requirements.txt        # Python dependencies
+├── main.py                  # Interactive shell entry point
+└── requirements.txt         # Python dependencies
 ```
 
 ## Memory System Details
