@@ -2,7 +2,7 @@
 	<img width="330" alt="an" src="https://github.com/user-attachments/assets/088d0699-7337-4f64-bf04-96278867bd06" />
 </div><br>
 
-Intelligent local virtual friend & assistant with persistent memory, tool calling, and productivity management built on Ollama. 
+Intelligent local virtual friend & assistant with persistent memory, tool calling, and productivity management built on LangChain and Ollama. 
 
 Anorix AI Agent is designed for those seeking a reliable virtual friend and personal assistant that remembers your conversations, understands your needs, and helps with daily life. This project is perfect for people who want an intelligent companion for chatting, planning tasks, and achieving goals — a friend who's always there and never forgets the important moments of your life.
 ## Features
