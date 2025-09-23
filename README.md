@@ -46,11 +46,15 @@ Anorix AI Agent is designed for those seeking a reliable virtual friend and pers
 
 ### Quick Setup
 ```bash
+# Clone the repository
+git clone https://github.com/KazKozDev/anorix.git
+cd anorix
+
 # Install Ollama
 curl -fsSL https://ollama.ai/install.sh | sh
 
-# Download model (choose one)
-ollama pull gpt-oss:20b      # Recommended
+# Download model 
+ollama pull gpt-oss:20b
 
 # Start Ollama server
 ollama serve
@@ -58,7 +62,7 @@ ollama serve
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Run agent
+# Run virtual friend
 python main.py
 ```
 
