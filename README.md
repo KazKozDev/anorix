@@ -1,7 +1,6 @@
 <div align="center">
 	<img width="330" alt="an" src="https://github.com/user-attachments/assets/088d0699-7337-4f64-bf04-96278867bd06" />
-</div>
-
+</div><br>
 
 Anorix AI Agent - Intelligent local virtual friend & assistant with persistent memory, tool calling, and productivity management built on Ollama.
 
