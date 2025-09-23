@@ -120,28 +120,28 @@ agent.run("Calculate compound interest on $1000 at 5% for 10 years")
 
 ```
 anorix/
-├── agent/                   # Core agent system
-│   ├── core.py              # Main OllamaAgent class
-│   ├── tool_manager.py      # Tool registration and management
-│   ├── callbacks.py         # LLM callback handlers
-│   ├── memory/              # Memory system
+├── agent/                           # Core agent system
+│   ├── core.py                      # Main OllamaAgent class
+│   ├── tool_manager.py              # Tool registration and management
+│   ├── callbacks.py                 # LLM callback handlers
+│   ├── memory/                      # Memory system
 │   │   ├── memory_manager.py
 │   │   ├── smart_memory.py
 │   │   └── conversation_storage.py
-│   ├── rag/                 # Retrieval-Augmented Generation
+│   ├── rag/                         # Retrieval-Augmented Generation
 │   │   ├── rag_manager.py
 │   │   ├── document_processor.py
 │   │   └── vector_store.py
-│   └── tools/               # Individual tools (16 tools)
-├── config/                  # Configuration files
-├── data/                    # Data storage (gitignored)
-│   ├── conversations.db     # SQLite conversation history
-│   ├── vector_db/           # ChromaDB vector storage
-│   └── rag_documents/       # RAG document storage
-├── examples/                # Usage examples
-├── tests/                   # Test suite
-├── main.py                  # Interactive shell entry point
-└── requirements.txt         # Python dependencies
+│   └── tools/                       # Individual tools (16 tools)
+├── config/                          # Configuration files
+├── data/                            # Data storage (gitignored)
+│   ├── conversations.db             # SQLite conversation history
+│   ├── vector_db/                   # ChromaDB vector storage
+│   └── rag_documents/               # RAG document storage
+├── examples/                        # Usage examples
+├── tests/                           # Test suite
+├── main.py                          # Interactive shell entry point
+└── requirements.txt                 # Python dependencies
 ```
 
 ## Memory System Details
