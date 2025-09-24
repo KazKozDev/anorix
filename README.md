@@ -1,5 +1,7 @@
 
-![Anorr](https://github.com/user-attachments/assets/dca5603d-943b-4164-bda3-25483a4ce258)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dca5603d-943b-4164-bda3-25483a4ce258" alt="Anorr">
+</div><br>
 
 Intelligent local virtual friend & assistant with persistent memory, tool calling, and productivity management built on LangChain and Ollama. 
 
